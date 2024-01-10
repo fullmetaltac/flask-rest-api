@@ -10,7 +10,8 @@ pip install -r requirements.txt
 
 # run
 docker build -t flask-api .
-docker run -p 5000:5000 -w /app -v ${PWD}:/app flask-api sh -c "flask run --host 0.0.0.0"
+docker run -p 5000:80 flask-api
+docker run -w /app flask-api sh -c "rq worker -u $REDIS_URL"
 
 # db
 flask db init
