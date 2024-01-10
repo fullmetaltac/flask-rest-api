@@ -3,6 +3,7 @@
 
 ```
 python -m venv .venv
+.\.venv\Scripts\Activate.ps1
 pip install flask
 flask run
 pip install -r requirements.txt
